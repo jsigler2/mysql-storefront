@@ -1,44 +1,31 @@
+
 DROP DATABASE IF EXISTS bamazon;
-CREATE DATABASE bamazon;
+
+CREATE database bamazon;
 
 USE bamazon;
 
 CREATE TABLE products(
-  item_id INT NOT NULL AUTO_INCREMENT,
-  product_name VARCHAR(45) NULL,
-  department_name VARCHAR(45) NULL,
-  price INT default 10,
-  stock_quantity INT default 10,
-  PRIMARY KEY (item_id)
+	item_id INT(1) NOT NULL,
+	product_name VARCHAR(40) NOT NULL,
+	department_name VARCHAR(40) NOT NULL,
+	price DECIMAL(10,2) NOT NULL,
+	stock_quantity INT(10) NOT NULL,
+	PRIMARY KEY (item_id)
 );
 
-INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("flashdrive", "electronics", "15", "12");
+Select * FROM products;
 
-INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("dvd", "movies", "19", "400");
-
-INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("cutlery", "kitchen", "50", "205");
-
-INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("rug", "home", "105", "16");
-
-INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("tennis shoes", "fashion", "40", "300");
-
-INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("biographical book", "books", "10", "45");
-
-INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("planter", "gardening", "14", "30");
-
-INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("tent", "outdoors", "450", "20");
-
-INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("mirowave", "appliances", "35", "10");
-
-INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("shampoo", "personal care", "10", "310");
+INSERT INTO products (item_id, product_name, department_name, price, stock_quantity)
+VALUES 
+(1, "flashdrive", "electronics", 15, 12),
+(2, "dvd", "movies", 19, 400),
+(3, "cutlery", "kitchen", 50, 205),
+(4, "rug", "home", 105, 16),
+(5, "tennis shoes", "fashion", 40, 300),
+(6, "biographical book", "books", 10, 45),
+(7, "planter", "gardening", 14, 30),
+(8, "tent", "outdoors", 450, 20),
+(9, "mirowave", "appliances", 35, 10),
+(10, "shampoo", "personal care", 10, 310)
 
