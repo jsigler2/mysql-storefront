@@ -6,7 +6,7 @@ CREATE database bamazon;
 USE bamazon;
 
 CREATE TABLE products(
-	item_id INT(1) NOT NULL,
+	item_id INT(100) NOT NULL,
 	product_name VARCHAR(40) NOT NULL,
 	department_name VARCHAR(40) NOT NULL,
 	price DECIMAL(10,2) NOT NULL,
