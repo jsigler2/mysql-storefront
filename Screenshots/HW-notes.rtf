@@ -1,0 +1,38 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red70\green137\blue204;\red23\green23\blue23;\red202\green202\blue202;
+\red140\green211\blue254;\red212\green214\blue154;\red194\green126\blue101;\red0\green0\blue0;\red67\green192\blue160;
+\red167\green197\blue152;}
+{\*\expandedcolortbl;;\cssrgb\c33725\c61176\c83922;\cssrgb\c11765\c11765\c11765;\cssrgb\c83137\c83137\c83137;
+\cssrgb\c61176\c86275\c99608;\cssrgb\c86275\c86275\c66667;\cssrgb\c80784\c56863\c47059;\cssrgb\c0\c0\c0;\cssrgb\c30588\c78824\c69020;
+\cssrgb\c70980\c80784\c65882;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 HW notes: \
+\
+So mine was working but then the MAMP PRO free trial ran out and then that same day it stopped working. I kept getting this error \'93Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'item_id = 4' at line 1\'94 however my sql file didn\'92t have a syntax error and I spent hours on google and that resulted in nothing. \
+\
+So to pseudo code out the rest: \
+\
+1) run node bamazonCustomer.js and get the table of products using \
+\
+
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 var\cf4 \strokec4  \cf5 \strokec5 Table\cf4 \strokec4  = \cf6 \strokec6 require\cf4 \strokec4 (\cf7 \strokec7 "cli-table"\cf4 \strokec4 );\cb1 \
+\
+
+\f0 \cf8 2) User is promoted to type the ID of the product they wish to purchase. \
+\
+3) User is prompted to type the amount of the product they would like to purchase.\
+\
+4) Depending on the quantity of the product, the user will see either 
+\f1 \cf9 \cb3 \strokec9 console\cf4 \strokec4 .\cf6 \strokec6 log\cf4 \strokec4 (\cf7 \strokec7 "Insufficient quantity, sorry we do not have enough "\cf4 \strokec4  + \cf5 \strokec5 res\cf4 \strokec4 [\cf10 \strokec10 0\cf4 \strokec4 ].\cf5 \strokec5 product_name\cf4 \strokec4  + \cf7 \strokec7 "to complete your order."\cf4 \strokec4 );\cb1 \
+\
+
+\f0 \cf8 Or 
+\f1 \cf9 \cb3 \strokec9 console\cf4 \strokec4 .\cf6 \strokec6 log\cf4 \strokec4 (\cf7 \strokec7 "Good news your order is in stock!"\cf4 \strokec4 );\cb1 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf4 \cb3 \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf9 \strokec9 console\cf4 \strokec4 .\cf6 \strokec6 log\cf4 \strokec4 (\cf7 \strokec7 "Your total cost for "\cf4 \strokec4  + \cf5 \strokec5 quantityNeeded\cf4 \strokec4  + \cf7 \strokec7 " "\cf4 \strokec4  +\cf5 \strokec5 res\cf4 \strokec4 [\cf10 \strokec10 0\cf4 \strokec4 ].\cf5 \strokec5 product_name\cf4 \strokec4  + \cf7 \strokec7 " is "\cf4 \strokec4  + \cf5 \strokec5 totalCost\cf4 \strokec4  + \cf7 \strokec7 " Thank you!"\cf4 \strokec4 );\cb1 \
+\
+}
